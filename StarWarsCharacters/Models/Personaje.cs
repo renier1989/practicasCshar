@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StarWarsCharacters.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace StarWarsCharacters.Models
 {
-    class Personaje
+    class Personaje : IPersonaje
     {
-        public int Id;
+        public int Id { get; set; }
 
         //aqui estoy usando el concepto de encapsulamiento
         private string _Nombre;
@@ -26,7 +27,7 @@ namespace StarWarsCharacters.Models
         // esto es un encapsulamiento de solo lectura
         public string NombreYTipo {  get { return $"{_Nombre} es un {Tipo} "; } }
         
-        public string Tipo;
+        public string Tipo { get; set; }
         //public string[] Habilidades;
         public List<Habilidad> Habilidades; // esto es para definir una lista de habilidades
         public bool UseTheForce;

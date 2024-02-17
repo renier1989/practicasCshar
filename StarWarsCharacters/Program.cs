@@ -1,8 +1,13 @@
-﻿using StarWarsCharacters.Models;
+﻿using StarWarsCharacters;
+using StarWarsCharacters.Models;
 
 //// aqui defino los tipos de habilidades y mas detalles
 
 using System.Text;
+
+//declaro un objeto para mostrar la impresion de los datos definidos con la interface
+var imprimirDatos = new ImprimirDatos();
+
 
 var habilidadEmpuje= new Habilidad();
 habilidadEmpuje.Nombre = "Lanzamiento de la fuerza";
@@ -86,7 +91,7 @@ Console.WriteLine(hanSoloUsandoHabilidades);
 string hanSoloAccionEspecial = hanSolo.AccionDelHeroeVillano("Esta enamorado de Leia");
 Console.WriteLine(hanSoloAccionEspecial);
 
-
+imprimirDatos.ImprimirDatosPersonaje(hanSolo);
 
 
 
