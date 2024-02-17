@@ -20,6 +20,11 @@ habilidadRayos.Nombre = "Rayos de la fuerza";
 habilidadRayos.Descipcion = "La Habilidad de crear rayos de fuerza desde las manos";
 habilidadRayos.Rango = RangoHabilidad.LordSith;
 
+var habilidadPilotar = new Habilidad();
+habilidadPilotar.Nombre = "Pilotar Naves";
+habilidadPilotar.Descipcion = "La habilidad de poder pilotar cualquier tipo de nave estelar";
+habilidadPilotar.Rango = RangoHabilidad.Humano;
+
 
 ////aqui definimos el objeto en base a la clase de Personaje
 
@@ -64,6 +69,25 @@ Console.WriteLine(yodausandohabilidades);
 //Console.WriteLine(PJR1 == PJR2); // esto si devuelve el valor de TRUE porque la creacion de un record si hace la comparacion de los valores en el objeto
 
 
+// usando la clase que esta heredando de la clase padre
+var hanSolo = new HeroeVillano();
+hanSolo.Id = 3;
+hanSolo.Nombre = "Han Solo";
+hanSolo.Tipo = "Humano";
+hanSolo.UseTheForce = false;
+
+List<Habilidad> habilidadesHansolo = new List<Habilidad>();
+habilidadesHansolo.Add(habilidadPilotar);
+hanSolo.Habilidades = habilidadesHansolo;
+
+string hanSoloUsandoHabilidades = hanSolo.UsarHabilidades();
+Console.WriteLine(hanSoloUsandoHabilidades);
+
+string hanSoloAccionEspecial = hanSolo.AccionDelHeroeVillano("Esta enamorado de Leia");
+Console.WriteLine(hanSoloAccionEspecial);
+
+
+
 
 
 
@@ -93,6 +117,7 @@ enum RangoHabilidad
     Sith,
     LordSith,
     MaestroSith,
+    Humano
 }
 
 //definicion de un record para realizar la comparacion
